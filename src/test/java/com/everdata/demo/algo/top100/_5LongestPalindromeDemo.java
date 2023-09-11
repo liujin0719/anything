@@ -17,6 +17,7 @@ public class _5LongestPalindromeDemo {
 		System.out.println(longestPalindrome(str));
 
 	}
+
 	public static String longestPalindrome(String s) {
 		int length = s.length();
 		if (s.length() < 2) {
@@ -51,8 +52,8 @@ public class _5LongestPalindromeDemo {
 				} else {
 					isPalindrome[i][j] = false;
 				}
-				if (isPalindrome[i][j] && j-i+1 > maxLen) {
-					maxLen = j-i+1;
+				if (isPalindrome[i][j] && j - i + 1 > maxLen) {
+					maxLen = j - i + 1;
 					begin = i;
 				}
 			}
