@@ -14,7 +14,8 @@ package com.everdata.demo.algo.top100;
 public class _5LongestPalindromeDemo {
 	public static void main(String[] args) {
 		String str = "babad";
-		System.out.println(longestPalindrome(str));
+//		System.out.println(longestPalindrome(str));
+		System.out.println(longestPalindrome2(str));
 
 	}
 
@@ -59,5 +60,27 @@ public class _5LongestPalindromeDemo {
 			}
 		}
 		return s.substring(begin, begin + maxLen);
+	}
+
+
+	public static String longestPalindrome2(String s) {
+		String res = "";
+		for (int i = 0; i < s.length(); i++) {
+			String res1 = palindrome(s, i, i);
+			String res2 = palindrome(s, i, i + 1);
+			res = res1.length() > res.length() ? res1 : res;
+			res = res2.length() > res.length() ? res2 : res;
+		}
+
+		return res;
+	}
+
+
+	private static String palindrome(String s, int l, int r) {
+		while (l >= 0 && r <= s.length()-1 && s.charAt(l) == s.charAt(r)) {
+			l--;
+			r++;
+		}
+		return s.substring(l+1, r);
 	}
 }

@@ -35,9 +35,9 @@ public class ArraysCombination {
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i; j < arr.length; j++) {
 				char[] chars = new char[j - i + 1];
-				System.out.println(chars.length);
+//				System.out.println(chars.length);
 				for (int k = 0; k < chars.length; k++) {
-					System.out.println("i:"+i+"j:"+j+"k:"+k);
+//					System.out.println("i:"+i+"j:"+j+"k:"+k);
 					chars[k] = arr[i + k];
 				}
 				list.add(chars);
