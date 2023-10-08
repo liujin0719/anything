@@ -11,35 +11,35 @@ public class LeftBoundaryBinarySearch {
     public static void main(String[] args) {
         int[] nums1 = {-1, 0, 3, 9, 9, 9, 12};
         int[] nums2 = {-1, 0, 3, 5, 9, 12};
+
         System.out.println(search(nums1, 9));
+        System.out.println(search(nums1, 3));
         System.out.println(search(nums2, 2));
     }
 
     public static int search(int[] nums, int target) {
-
         if (nums == null) {
-            return -1;
+            return 0;
         }
 
         int left = 0;
         int right = nums.length - 1;
 
         while (left <= right) {
-
             int mid = left + (right - left) / 2;
-            if (nums[mid] == target) {
-                while (mid > 0 && nums[mid - 1] == target) {
-                    mid--;
-                }
-                return mid;
-            } else if (nums[mid] > target) {
+            if (nums[mid] > target) {
                 right = mid - 1;
-            } else {
+            } else if (nums[mid] < target) {
                 left = mid + 1;
+            } else {
+                if (mid > 0 && nums[mid - 1] == target) {
+                    right = mid - 1;
+                } else {
+                    return mid;
+                }
             }
 
         }
-
         return -1;
     }
 }
