@@ -1,5 +1,5 @@
 ### Java template
-target/*
+target
 # Compiled class file
 *.class
 
