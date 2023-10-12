@@ -5,6 +5,8 @@
 
 package com.everdata.demo.algo.top100;
 
+import com.everdata.demo.domain.ListNode;
+
 /**
  * _61RotateRight
  *
@@ -69,27 +71,5 @@ public class _61RotateRight {
 		ListNode ret = iter.next;
 		iter.next = null;
 		return ret;
-	}
-
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode() {
-		}
-
-		ListNode(int val) {
-			this.val = val;
-		}
-
-		ListNode(int val, ListNode next) {
-			this.val = val;
-			this.next = next;
-		}
-
-		@Override
-		public String toString() {
-			return "ListNode{" + "val=" + val + ", next=" + next + '}';
-		}
 	}
 }

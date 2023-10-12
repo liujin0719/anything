@@ -3,7 +3,7 @@
  * http://eversec.com.cn/
  */
 
-package com.everdata.demo.algo;
+package com.everdata.demo.algo.array;
 
 import java.util.ArrayList;
 import java.util.List;

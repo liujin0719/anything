@@ -14,21 +14,21 @@ public class Fib2 {
     }
 
     private static int fib2(int n) {
-        int[] memo = new int[n + 1];
-        return dp(memo, n);
+        int[] memory = new int[n + 1];
+        return dp(memory, n);
     }
 
-    private static int dp(int[] memo, int n) {
+    private static int dp(int[] memory, int n) {
 
         if (n == 0 || n == 1) {
             return n;
         }
-        if (memo[n] != 0) {
-            return memo[n];
+        if (memory[n] != 0) {
+            return memory[n];
         }
-        memo[n] = dp(memo, n - 1) + dp(memo, n - 2);
+        memory[n] = dp(memory, n - 1) + dp(memory, n - 2);
 //        System.out.println("开始计算节点:" + n);
-        return memo[n];
+        return memory[n];
     }
 
 }
