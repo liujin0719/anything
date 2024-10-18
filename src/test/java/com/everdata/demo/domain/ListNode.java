@@ -1,5 +1,8 @@
 package com.everdata.demo.domain;
 
+import javax.management.DynamicMBean;
+import java.util.List;
+
 /**
  * ListNode
  *
@@ -20,6 +23,17 @@ public class ListNode {
     public ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    public ListNode(int[] vals) {
+        ListNode dummy = new ListNode(-1, null);
+        ListNode cur = dummy;
+        for (int i : vals) {
+            cur.next = new ListNode(i, null);
+            cur = cur.next;
+        }
+        val = dummy.next.val;
+        next = dummy.next.next;
     }
 
     @Override
